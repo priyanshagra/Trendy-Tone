@@ -29,20 +29,29 @@ const Navbar = () => {
         <li className="nav-item">
           <Link className={`nav-link ${location.pathname==="/about"?"active":""}`} to="/about" >About</Link>
         </li>
+        <li className="nav-item">
+          <Link className={`nav-link ${location.pathname==="/faq"?"active":""}`} to="/faq" >Faq</Link>
+        </li>
         </ul>
-        <ul>
-        <li className="d-flex">
+        <li className="d-flex mx-2">
+        <Link className="btn btn-primary" to="/login" role="button">Login</Link>
+        </li>
+        <li className="d-flex mx-2">
+        <Link className="btn btn-primary" to="/signup" role="button">Signup</Link>
+        </li>
+    
+        <li className="d-flex mx-2">
           <Link className={`nav-link ${location.pathname==="/yourorder"?"active":""}`} to="/yourorder" >
-          <i className="fa-solid fa-cart-shopping"></i>
+          <i className="fa-solid fa-cart-shopping">ORDERS</i>
           </Link>
         </li>
         
-      <li className="d-flex">
+      <li className="d-flex mx-2">
           <Link className={`nav-link ${location.pathname==="/profile"?"active":""}`} to="/profile" >
-          <i className="fa-solid fa-user"></i>
+          <i className="fa-solid fa-user">USER</i>
           </Link>
         </li>
-      </ul>
+    
     </div>
   </div>
 </nav>
