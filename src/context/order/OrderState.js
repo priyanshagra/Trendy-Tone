@@ -1,34 +1,48 @@
 import { useState } from "react";
 import OrderContext from "./orderContext";
 
-
-const OrderState =(props)=>{
-
-    const orderInitial = [
-        {
-          "_id": "640e5b33f7c59c92dfe6f6c6",
-          "user": "640e14b928452f5d6768128e",
-          "title": "My title",
-          "description": "dekho bhai sabka sath sab acha ho",
-          "date": "2023-03-12T23:07:31.531Z",
-          "__v": 0
+const OrderState = (props) => {
+  const orderInitial = [];
+  const [order, setOrder] = useState(orderInitial);
+  //method to fetch all order
+  const getOrder = async () => {
+    const response = await fetch(
+      "http://localhost:8000/api/order/fetchallorder",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token":localStorage.getItem('token')
         },
-        {
-            "_id": "640e5b33f7c59c92dfe6f6c6",
-            "user": "640e14b928452f5d6768128e",
-            "title": "My title",
-            "description": "dekho bhai sabka sath sab acha ho",
-            "date": "2023-03-12T23:07:31.531Z",
-            "__v": 0
-        }
-      ]
-      const [order, setOrder]= useState(orderInitial)
+      }
+    );
+    const json = await response.json();
+    setOrder(json);
+  };
+  //method to add all orders
+  const addOrder = async (title,description)=>{
+    
 
-    return(
-        <OrderContext.Provider value={{order,setOrder}}>
-            {props.children}
-        </OrderContext.Provider>
-    )
+    const response = await fetch("http://localhost:8000/api/order/addorder",{
+        method:"POST",
+        headers: {
+            "Content-Type":"application/json",
+            "auth-token":localStorage.getItem('token')
+        },
+        body:JSON.stringify({title,description})
+    });
+    
+
+    const orders = await response.json();
+    setOrder(order.concat(orders))
 }
+
+
+  return (
+    <OrderContext.Provider value={{ order, setOrder, getOrder,addOrder }}>
+      {props.children}
+    </OrderContext.Provider>
+  );
+};
 
 export default OrderState;

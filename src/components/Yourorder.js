@@ -1,21 +1,37 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import OrderContext from '../context/order/orderContext';
 import Orderitem from './Orderitem';
 
+
+
 const Yourorder = () => {
+  let navigate = useNavigate();
     const context = useContext(OrderContext);
-    const {order,setOrder} = context ;
+    const {order ,getOrder,addOrder} = context ;
+    useEffect(() => {
+      if (localStorage.getItem('token')){
+      getOrder()
+      }
+      else{
+        navigate("/login");
+      }
+    },[])
+
   return (
+  
+  
     <div className='container my-3'>
         <h2>Your orders</h2>
-      {
-        order.map(
+      {order.length===0  &&  " Shoping start kardo"          }
+        {order.map(
             (orders)=>{
                 return <Orderitem orders = {orders}/>
             }
         )
       }
     </div>
+    
   )
 }
 

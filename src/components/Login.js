@@ -1,10 +1,20 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+
+const Login = (props) => {
+
+  
 
     const [credentials,setCredentials]=useState({email:"",password:""})
+    let navigate = useNavigate();
+
+
 
     const handleSubmit=async (e)=>{
+     
+       
+
         e.preventDefault();
         const response=await fetch("http://localhost:8000/api/auth/login",{
             method:"POST",
@@ -16,11 +26,23 @@ const Login = () => {
         });
         const json = await response.json();
         console.log(json);
+        if(json.success)
+        {
+          localStorage.setItem('token',json.authtoken);
+          props.showAlert("login successfull ","success");
+          navigate("/");
+        }
+        else
+        {
+          props.showAlert("invalid details or not created account yet go on signup page","danger");
+        }
     } 
     const onChange=(e)=>{
         setCredentials({...credentials,[e.target.name]:e.target.value})
     }
   return (
+    
+    
     <div>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -28,10 +50,10 @@ const Login = () => {
             Email address
           </label>
           <input
-            type="email" name="credentials.email"
+            type="email" name="email"
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp" onChange={onChange}
+            id="email" value={credentials.email}
+            aria-describedby="emailHelp" onChange={onChange} required 
           />
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
@@ -43,8 +65,8 @@ const Login = () => {
           </label>
           <input
             type="password"
-            className="form-control" name="credentials.password"
-            id="exampleInputPassword1" onChange={onChange}
+            className="form-control" name="password" value={credentials.password}
+            id="password" onChange={onChange} required
           />
         </div>
         <button type="submit" className="btn btn-primary" >
@@ -52,6 +74,7 @@ const Login = () => {
         </button>
       </form>
     </div>
+  
   );
 };
 

@@ -19,29 +19,45 @@ import Faq from './components/Faq';
 import Forms from './components/Forms';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import { useState } from 'react';
+import Alert from './components/Alert';
 
 
 
 function App() {
+  const [alert,setAlert] = useState(null);
+  const showAlert =(message,type)=>
+  { 
+    setAlert({
+      msg:message,
+      type:type
+    })
+    setTimeout(()=>{
+      setAlert(null);
+    },3000);
+
+  }
+  
   return (
     <>
     <OrderState>
       
       <Router>
         <Navbar/>
+        <Alert alert={alert}/>
         <div className="container">
           <Routes>
-            <Route exact path="/" Component={Home}/>
+            <Route exact path="/" Component={Home} />
             <Route exact path="/about" Component={About}/>
             <Route exact path="/faq" Component={Faq}/>
-            <Route exact path="/login" Component={Login}/>
-            <Route exact path="/signup" Component={Signup}/>
+            <Route exact path="/login" element={<Login showAlert={showAlert}/>}/>
+            <Route exact path="/signup" element={<Signup showAlert={showAlert}/>}  /> 
             <Route exact path="/yourorder" Component={Yourorder}/>
             <Route exact path="/profile" Component={Profile}/>
             <Route exact path="/men" Component={Men}/>
             <Route exact path="/women" Component={Women}/>
             <Route exact path="/kid" Component={Kids}/>
-            <Route exact path="/form" Component={Forms}/>
+            <Route exact path="/form" element={<Forms showAlert={showAlert}/>}/>
           </Routes>
           </div>
       </Router>
@@ -49,6 +65,6 @@ function App() {
     </OrderState>
     </>
   );
-}
+  }
 
 export default App;

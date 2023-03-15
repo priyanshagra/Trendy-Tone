@@ -1,18 +1,44 @@
-import React, { useContext } from 'react'
-import OrderContext from '../context/order/orderContext';
+import React, {useState, useEffect  } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
-    const context = useContext(OrderContext);
-    const {order,setOrder} = context ;
-  return (
-    <div>
+  
+  const detailInitial = [];
+  const [detail, setDetail] = useState(detailInitial);
+    const user= async()=>{
+    const response = await fetch(
+      "http://localhost:8000/api/auth/getuser",
       {
-        order.map(
-            (orders)=>{
-                return orders.title
-            }
-        )
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem('token')
+        },
       }
+    );
+    const json = await response.json();
+     setDetail(json)
+  
+    }
+    const navigate = useNavigate();
+    useEffect(() => {
+      if (localStorage.getItem('token')){
+       user();
+      }
+      else
+      { 
+        navigate("/login");
+
+      }
+      
+    })
+  
+    
+
+  return (
+    <div class="container">
+      <h1>Your Name</h1>
+      <h3> {detail.name}</h3>
     </div>
   )
 }

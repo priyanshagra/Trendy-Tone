@@ -14,7 +14,7 @@ const Men = () => {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <Link to="/form" className="btn btn-primary">
+          <Link to={localStorage.getItem('token')?"/form":"/login"} className="btn btn-primary">
             Go somewhere
           </Link>
         </div>
@@ -27,7 +27,7 @@ const Men = () => {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <Link to="/form" className="btn btn-primary">
+          <Link to={localStorage.getItem('token')?"/form":"/login"} className="btn btn-primary">
             Go somewhere
           </Link>
         </div>
@@ -40,7 +40,7 @@ const Men = () => {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <Link to="/form" className="btn btn-primary">
+          <Link to={localStorage.getItem('token')?"/form":"/login"} className="btn btn-primary">
             Go somewhere
           </Link>
         </div>
@@ -53,7 +53,7 @@ const Men = () => {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <Link to="/form" className="btn btn-primary">
+          <Link to={localStorage.getItem('token')?"/form":"/login"} className="btn btn-primary">
             Go somewhere
           </Link>
         </div>
@@ -66,7 +66,7 @@ const Men = () => {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <Link to="/form" className="btn btn-primary">
+          <Link to={localStorage.getItem('token')?"/form":"/login"} className="btn btn-primary">
             Go somewhere
           </Link>
         </div>

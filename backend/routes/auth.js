@@ -14,14 +14,15 @@ router.post('/createuser',[
     body('password','Enter a valid password').isLength({ min: 5 })
 ],
 async(req, res) => {
+    let success=false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({success, errors: errors.array() });
     }
     try{
     let user=await User.findOne({email: req.body.email});
     if(user){
-        return res.status(400).json({error:"sorry a user with this email already exist"})
+        return res.status(400).json({success,error:"sorry a user with this email already exist"})
     }
     const salt = await bcrypt.genSalt(10);
     const secPass = await bcrypt.hash(req.body.password,salt);
@@ -37,8 +38,8 @@ async(req, res) => {
         }
       }
        const authtoken = jwt.sign(data, JWT_SECRET);
-       
-       res.json({authtoken});
+       success=true;
+       res.json({succes,authtoken});
     }catch (error){
         console.error(error.message);
         res.status(500).send("some error occured");
@@ -51,7 +52,7 @@ router.post('/login',[
     body('email','Enter a valid email').isEmail(),
     body('password','Password cannot be blank').exists(),
 ],async(req, res) => {
-
+   let success= false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -62,12 +63,12 @@ router.post('/login',[
         let user = await User.findOne({email});
         if(!user)
         {
-            return res.status(400).json({error:"Please try to login with corect credentials"});
+            return res.status(400).json({success,error:"Please try to login with corect credentials"});
         }
 
-        const passwordcompare = bcrypt.compare(password,user.password)
+        const passwordcompare =await bcrypt.compare(password,user.password)
         if(!passwordcompare){
-            return res.status(400).json({error:"Please try to login with corect credentials"});
+            return res.status(400).json({success,error:"Please try to login with corect credentials"});
         }
 
         const data ={
@@ -77,8 +78,8 @@ router.post('/login',[
           }
 
           const authtoken = jwt.sign(data, JWT_SECRET);
-       
-       res.json({authtoken});
+          success=true;
+       res.json({success,authtoken});
     } catch (error){
         console.error(error.message);
         res.status(500).send("some error occured");
@@ -88,7 +89,7 @@ router.post('/login',[
 
 //third route for user details
 
-router.post('/getuser'
+router.get('/getuser'
 ,fetchuser,async(req, res) => {
 try{
     userId=req.user.id;
