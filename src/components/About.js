@@ -6,7 +6,9 @@ const About = () => {
    
   return (
     <div>
-       This is About page
+       This is About page.In this we will discuss about the mission and vision of this website.
+       In addition to this we will also discuss about our social responsibility and services provided
+       to the users
     </div>
   )
 }
