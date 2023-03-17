@@ -14,7 +14,12 @@ const Home = () => {
           <div className="card-body" style={{textAlign:"center"}}>
             <h5 className="card-title">MENS</h5>
             <p className="card-text">
+<<<<<<< HEAD
               Give Your Cloth Design as You Wish 
+=======
+              Some quick examples text to build on the card title and make up the
+              bulk of the card's content.
+>>>>>>> a4dbaa6c8bc95a02c3e164816ad46d737e4e8b9f
             </p>
             <Link to="/men" className="btn btn-primary">
               CHECKOUT

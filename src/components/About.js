@@ -7,6 +7,7 @@ const About = () => {
   return (
     
     <div>
+<<<<<<< HEAD
         <div className="container" >
     <h1
       style={{
@@ -142,6 +143,11 @@ const About = () => {
       also use a variety of channels to filter for themselves
     </p>
   </div>
+=======
+       This is About page.In this we will discuss about the mission and vision of this website.
+       In addition to this we will also discuss about our social responsibility and services provided
+       to the users
+>>>>>>> a4dbaa6c8bc95a02c3e164816ad46d737e4e8b9f
     </div>
   )
 }
