@@ -12,7 +12,7 @@ const About = () => {
       style={{
         textDecoration: "underline",
         textAlign: "center",
-        fontSize: 100,
+        fontSize: 50,
         fontFamily: "Arial, Helvetica, sans-serif"
       }}
     >

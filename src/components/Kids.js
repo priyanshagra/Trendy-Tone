@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import Gown from  './images/Gown.jpg';
+import kid2 from './images/kid2.jpg'
+import kid3 from './images/kid3.jpg'
+import kid4 from './images/kid4.jpg'
+import kid5 from './images/kid5.jpg'
+
  let orderTitle="";
 const Kids = () => {
   const addtitle1=(e)=>{
@@ -28,54 +33,58 @@ const Kids = () => {
         </div>
       </div>
       <div className="col-md-6">
-        <img src="..." className="card-img-top" alt="..." />
-        <div className="card-body">
+        <img src={kid2} className="card-img-top" alt="..." style={{height: "457px",width: "471px" ,paddingLeft:"161px"}} />
+        <div className="card-body" style={{textAlign:"center"}}>
           <h5 className="card-title">Card title</h5>
           <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          You can <strong> CHANGE PRIMARY COLOUR , SECONDARY COLOUR ,
+            COLLAR ,SLEEVE 
+              </strong> of cloth and <strong>OVERLAY TEXT</strong> on cloth 
           </p>
           <Link to={localStorage.getItem('token')?"/form":"/login"} className="btn btn-primary">
-            Go somewhere
+            Proceed To Buy
           </Link>
         </div>
       </div>
       <div className="col-md-6">
-        <img src="..." className="card-img-top" alt="..." />
-        <div className="card-body">
+        <img src={kid3} className="card-img-top" alt="..." style={{height: "457px",width: "471px" ,paddingLeft:"161px"}}/>
+        <div className="card-body" style={{textAlign:"center"}}>
           <h5 className="card-title">Card title</h5>
           <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          You can <strong> CHANGE PRIMARY COLOUR , SECONDARY COLOUR ,
+            COLLAR ,SLEEVE 
+              </strong> of cloth and <strong>OVERLAY TEXT</strong> on cloth 
           </p>
           <Link to={localStorage.getItem('token')?"/form":"/login"} className="btn btn-primary">
-            Go somewhere
+          Proceed To Buy
           </Link>
         </div>
       </div>
       <div className="col-md-6">
-        <img src="..." className="card-img-top" alt="..." />
-        <div className="card-body">
+        <img src={kid4} className="card-img-top" alt="..." style={{height: "457px",width: "471px" ,paddingLeft:"161px"}}/>
+        <div className="card-body"  style={{textAlign:"center"}}>
           <h5 className="card-title">Card title</h5>
           <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          You can <strong> CHANGE PRIMARY COLOUR , SECONDARY COLOUR ,
+            COLLAR ,SLEEVE 
+              </strong> of cloth and <strong>OVERLAY TEXT</strong> on cloth 
           </p>
           <Link to={localStorage.getItem('token')?"/form":"/login"} className="btn btn-primary">
-            Go somewhere
+          Proceed To Buy
           </Link>
         </div>
       </div>
       <div className="col-md-6" >
-        <img src="..." className="card-img-top" alt="..." />
-        <div className="card-body">
+        <img src={kid5} className="card-img-top" alt="..." style={{height: "457px",width: "471px" ,paddingLeft:"161px"}} />
+        <div className="card-body" style={{textAlign:"center"}}>
           <h5 className="card-title">Card title</h5>
           <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          You can <strong> CHANGE PRIMARY COLOUR , SECONDARY COLOUR ,
+            COLLAR ,SLEEVE 
+              </strong> of cloth and <strong>OVERLAY TEXT</strong> on cloth 
           </p>
           <Link to={localStorage.getItem('token')?"/form":"/login"} className="btn btn-primary">
-            Go somewhere
+          Proceed To Buy
           </Link>
         </div>
       </div>

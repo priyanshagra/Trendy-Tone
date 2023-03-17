@@ -26,9 +26,7 @@ const Forms = (props) => {
   return (
     <div>
       <div >
-        <img src={Gown} alt={orderTitle}/>
-
-        
+        <img src={Gown} alt={orderTitle}/> 
       </div>
       <strong >{orderTitle}</strong>
       <form onSubmit={handleSubmit}>

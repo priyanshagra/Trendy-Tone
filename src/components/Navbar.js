@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{ backgroundImage:`url(${fashion})`,backgroundRepeat:"no-repeat",
     backgroundSize:1550,height:180}}>
       <div className="container-fluid" >
-        <Link className="navbar-brand" to="/" style={{position:"absolute",left:700}}>
+        <Link className="navbar-brand" to="/" style={{position:"absolute",left:500,top:0,fontFamily:"cursive",fontSize:100}}>
           Trendy Tone
         </Link>
         <button
@@ -30,11 +30,11 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon">tr</span>
+          <span className="navbar-toggler-icon"><img src={icon} alt=".."></img></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
+            <li className="nav-item" style={{position:"absolute",top:0}}>
               <Link
                 className={`nav-link ${
                   location.pathname === "/" ? "active" : ""
@@ -46,7 +46,7 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li className="nav-item">
+            <li className="nav-item" style={{position:"absolute",top:0,left:80}}>
               <Link
                 className={`nav-link ${
                   location.pathname === "/about" ? "active" : ""
@@ -56,7 +56,7 @@ const Navbar = () => {
                 About us 
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" style={{position:"absolute",top:0,left:160}}>
               <Link
                 className={`nav-link ${
                   location.pathname === "/faq" ? "active" : ""
@@ -67,28 +67,28 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <li className="d-flex mx-2">
+          <li className="d-flex mx-2" style={{position:"absolute",bottom:0,left:80}}>
             <Link className= "nav-link active " to="/yourorder">
               <i className="fa-solid fa-cart-shopping">ORDERS</i>
             </Link>
           </li>
 
-          <li className="d-flex mx-2">
+          <li className="d-flex mx-2" style={{position:"absolute",bottom:0}}>
             <Link className="nav-link active" to="/profile ">
               <i className="fa-solid fa-user">USER</i>
             </Link>
           </li>
           {!localStorage.getItem("token") ? (
             <form className="d-flex">
-              <Link className="btn btn-primary mx-1" to="/login" role="button">
+              <Link className="btn btn-primary mx-1" to="/login" role="button" style={{position:"absolute",top:0,right:80}}>
                 Login
               </Link>
-              <Link className="btn btn-primary mx-1" to="/signup" role="button">
+              <Link className="btn btn-primary mx-1" to="/signup" role="button" style={{position:"absolute",top:0,right:0}}>
                 Signup
               </Link>
             </form>
           ) : (
-            <button className="btn btn-primary" onClick={handleLogout}>
+            <button className="btn btn-primary" onClick={handleLogout} style={{position:"absolute",top:0,right:0}}>
               Logout
             </button>
           )}
