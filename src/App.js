@@ -22,6 +22,9 @@ import Signup from './components/Signup';
 import { useState } from 'react';
 import Alert from './components/Alert';
 
+import backroundwallpaper from './background.jpg'
+import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 
 function App() {
@@ -45,7 +48,7 @@ function App() {
       <Router>
         <Navbar/>
         <Alert alert={alert}/>
-        <div className="container">
+        <div  style={{backgroundImage:`url(${backroundwallpaper})`,marginLeft:0,marginRight:0,paddingLeft:0,paddingRight:0,backgroundRepeat:"repeat"}}>
           <Routes>
             <Route exact path="/" Component={Home} />
             <Route exact path="/about" Component={About}/>
@@ -58,8 +61,11 @@ function App() {
             <Route exact path="/women" Component={Women}/>
             <Route exact path="/kid" Component={Kids}/>
             <Route exact path="/form" element={<Forms showAlert={showAlert}/>}/>
+            <Route exact path="/contactus" Component={Contact}/>
           </Routes>
+          <Footer/>
           </div>
+          
       </Router>
       
     </OrderState>

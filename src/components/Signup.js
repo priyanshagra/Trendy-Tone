@@ -44,6 +44,7 @@ const Signup = (props) => {
     
     
     <div className="container">
+      <div style={{textAlign:"center"}}><h1 >Signup</h1></div>
       <form onSubmit={handleSubmit}>
       <div className="mb-3">
           <label htmlFor="name" className="form-label">

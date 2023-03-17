@@ -20,25 +20,30 @@ router.get('/fetchallorder',fetchuser,async(req,res)=>{
 //route2 for adding a order
 router.post('/addorder',fetchuser,[
     body('title','Enter a valid title').isLength({ min: 3 }),
-    body('description','description must be atleast 5 charaacters').isLength({ min: 5 })
+    body('primary_colour','Enter a valid colour'),
+    body('secondary_colour','Enter a valid colour'),
+    body('collar','Enter a valid collar'),
+    body('sleeve','Enter a valid sleeve'),
+    body('titletoshow','enter a good text').isLength({ max: 15 }),
+    body('position','Enter a valid position')
 ],async(req,res)=>{
     try {
         
    
-    const{title, description}=req.body;
+    const{title, primary_colour,secondary_colour,collar,sleeve,titletoshow,position}=req.body;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
     const order= new Order({
-        title,description, user:req.user.id
+        title,primary_colour,secondary_colour,collar,sleeve,titletoshow,position, user:req.user.id
     })
     const saveOrder=await order.save()
     
     res.json(saveOrder);
 } catch (error){
     console.error(error.message);
-    res.status(500).send("some error occured");
+    res.status(500).send(error);
 }
 })
 

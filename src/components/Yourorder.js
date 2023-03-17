@@ -8,7 +8,7 @@ import Orderitem from './Orderitem';
 const Yourorder = () => {
   let navigate = useNavigate();
     const context = useContext(OrderContext);
-    const {order ,getOrder,addOrder} = context ;
+    const {order ,getOrder} = context ;
     useEffect(() => {
       if (localStorage.getItem('token')){
       getOrder()
@@ -21,7 +21,7 @@ const Yourorder = () => {
   return (
   
   
-    <div className='container my-3'>
+    <div className='container '>
         <h2>Your orders</h2>
       {order.length===0  &&  " Shoping start kardo"          }
         {order.map(

@@ -8,9 +8,29 @@ const OrderSchema=new Schema({
     },
     title:{
         type:String,
+        required:true,
+    },
+    primary_colour:{
+        type:String,
         required: true
     },
-    description:{
+    secondary_colour:{
+        type:String,
+        required:true,  
+    },
+    collar:{
+        type:String,
+        required:true,  
+    },
+    sleeve:{
+        type:String,
+        required:true,  
+    },
+    titletoshow:{
+        type:String,
+        required:true,
+    },
+    position:{
         type:String,
         required:true,  
     },

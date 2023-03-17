@@ -7,7 +7,7 @@ const Orderitem = (props) => {
     <div>
         
     
-        <div className="card my-3 ">
+        <div className="card  ">
         <img src="..." className="card-img-top" alt="..."/>
         <div className="card-body">
         <h5 className="card-title">{orders.title}</h5>

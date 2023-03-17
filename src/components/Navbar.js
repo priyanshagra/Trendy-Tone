@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import icon from './images/icon.jpg';
+import fashion from  './images/fashion.jpg';
 
 const Navbar = () => {
   let navigate = useNavigate();
@@ -13,9 +15,10 @@ const Navbar = () => {
     console.log(location);
   }, [location]);
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{ backgroundImage:`url(${fashion})`,backgroundRepeat:"no-repeat",
+    backgroundSize:1550,height:180}}>
+      <div className="container-fluid" >
+        <Link className="navbar-brand" to="/" style={{position:"absolute",left:700}}>
           Trendy Tone
         </Link>
         <button
@@ -27,7 +30,7 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon">tr</span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -50,7 +53,7 @@ const Navbar = () => {
                 }`}
                 to="/about"
               >
-                About
+                About us 
               </Link>
             </li>
             <li className="nav-item">
@@ -64,6 +67,17 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+          <li className="d-flex mx-2">
+            <Link className= "nav-link active " to="/yourorder">
+              <i className="fa-solid fa-cart-shopping">ORDERS</i>
+            </Link>
+          </li>
+
+          <li className="d-flex mx-2">
+            <Link className="nav-link active" to="/profile ">
+              <i className="fa-solid fa-user">USER</i>
+            </Link>
+          </li>
           {!localStorage.getItem("token") ? (
             <form className="d-flex">
               <Link className="btn btn-primary mx-1" to="/login" role="button">
@@ -79,22 +93,7 @@ const Navbar = () => {
             </button>
           )}
 
-          <li className="d-flex mx-2">
-            <Link
-              className={`nav-link ${
-                location.pathname === "/yourorder" ? "active" : ""
-              }`}
-              to="/yourorder"
-            >
-              <i className="fa-solid fa-cart-shopping">ORDERS</i>
-            </Link>
-          </li>
-
-          <li className="d-flex mx-2">
-            <Link className="nav-link active" to="/profile ">
-              <i className="fa-solid fa-user">USERS</i>
-            </Link>
-          </li>
+          
         </div>
       </div>
     </nav>

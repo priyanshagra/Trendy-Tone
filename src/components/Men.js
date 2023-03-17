@@ -15,7 +15,7 @@ const Men = () => {
             bulk of the card's content.
           </p>
           <Link to={localStorage.getItem('token')?"/form":"/login"} className="btn btn-primary">
-            Go somewhere
+            PROCEED TO BUY
           </Link>
         </div>
       </div>
