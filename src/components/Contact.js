@@ -31,7 +31,7 @@ const Contact = () => {
             <br />
             <br />
             
-            <p className="d">EMAIL : trendyTone@gmail.com</p>
+            <p className="d">EMAIL : trendyTone@gmail.com </p>
         
           </div>
     </div>
