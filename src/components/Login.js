@@ -43,40 +43,56 @@ const Login = (props) => {
   return (
     
     
-    <div>
-      <div style={{textAlign:"center"}}><h1 >Login</h1></div>
-      
+    <div >
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
+        <div className="mb-3" style={{position:"absolute",left:350}}>
           <label htmlFor="email" className="form-label">
-            Email address
+          <strong>Email address</strong>  
           </label>
           <input
             type="email" name="email"
             className="form-control"
             id="email" value={credentials.email}
-            aria-describedby="emailHelp" onChange={onChange} required 
+            aria-describedby="emailHelp" onChange={onChange} required style={{width:900}} 
           />
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
           </div>
         </div>
-        <div className="mb-3">
+        <div className="mb-3" style={{position:"absolute",left:350,top:350}}>
           <label htmlFor="password" className="form-label">
-            Password
+          <strong>Password</strong>  
           </label>
           <input
             type="password"
             className="form-control" name="password" value={credentials.password}
-            id="password" onChange={onChange} required
+            id="password" onChange={onChange} required style={{width:900}}
           />
         </div>
-        <button type="submit" className="btn btn-primary" >
-          Submit
+        <div style={{position:"absolute",left:750,top:450}}>
+        <button type="submit" className="btn btn-primary"  >
+          Login
         </button>
+        </div>
       </form>
+      <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
     </div>
-  
   );
 };
 

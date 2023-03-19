@@ -53,7 +53,7 @@ const Navbar = () => {
                 }`}
                 to="/about"
               >
-                About us 
+                About Us 
               </Link>
             </li>
             <li className="nav-item" style={{position:"absolute",top:0,left:160}}>
@@ -63,7 +63,7 @@ const Navbar = () => {
                 }`}
                 to="/faq"
               >
-                Faq
+                FAQ
               </Link>
             </li>
           </ul>
@@ -92,8 +92,6 @@ const Navbar = () => {
               Logout
             </button>
           )}
-
-          
         </div>
       </div>
     </nav>

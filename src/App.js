@@ -48,7 +48,7 @@ function App() {
       <Router>
         <Navbar/>
         <Alert alert={alert}/>
-        <div  style={{backgroundImage:`url(${backroundwallpaper})`,marginLeft:0,marginRight:0,paddingLeft:0,paddingRight:0,backgroundRepeat:"repeat"}}>
+        <div  style={{backgroundImage:`url(${backroundwallpaper})`,marginLeft:0,marginRight:0,paddingLeft:20,paddingRight:10,backgroundRepeat:"repeat",marginTop:0,marginBottom:0}}>
           <Routes>
             <Route exact path="/" Component={Home} />
             <Route exact path="/about" Component={About}/>

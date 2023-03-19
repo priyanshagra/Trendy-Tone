@@ -3,7 +3,6 @@ import faq from './images/faq.png'
 const Faq = () => {
   return (
     <div>
-<<<<<<< HEAD
        <div style={{float: 'right'}}>
           <img src={faq} alt="FAQs" />
         </div>
@@ -56,9 +55,6 @@ const Faq = () => {
           </li>
           <br />
         </ul>
-=======
-      This will show term and condition.
->>>>>>> a4dbaa6c8bc95a02c3e164816ad46d737e4e8b9f
     </div>
   )
 }

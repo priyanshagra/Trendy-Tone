@@ -20,7 +20,7 @@ const OrderState = (props) => {
     setOrder(json);
   };
   //method to add all orders
-  const addOrder = async (title,description)=>{
+  const addOrder = async (title , primary_colour , secondary_colour,sleeve,collar,titletoshow,position ,size)=>{
     
 
     const response = await fetch("http://localhost:8000/api/order/addorder",{
@@ -29,7 +29,7 @@ const OrderState = (props) => {
             "Content-Type":"application/json",
             "auth-token":localStorage.getItem('token')
         },
-        body:JSON.stringify({title,description})
+        body:JSON.stringify({title,primary_colour,secondary_colour,sleeve,collar,titletoshow,position ,size})
     });
     
 

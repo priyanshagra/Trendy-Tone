@@ -9,8 +9,6 @@ const Signup = (props) => {
 
   const [credentials,setCredentials]=useState({name:"",email:"",password:"",cpassword:""})
   let navigate = useNavigate();
-
-
   const handleSubmit=async (e)=>{
       e.preventDefault();
       const {name,email,password}=credentials;
@@ -44,11 +42,10 @@ const Signup = (props) => {
     
     
     <div className="container">
-      <div style={{textAlign:"center"}}><h1>Signup</h1></div>
       <form onSubmit={handleSubmit}>
       <div className="mb-3">
           <label htmlFor="name" className="form-label">
-            Name
+            <strong>Name</strong>
           </label>
           <input
             type="text"
@@ -59,7 +56,7 @@ const Signup = (props) => {
         </div>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
-            Email address
+           <strong>Email address</strong> 
           </label>
           <input
             type="email"
@@ -73,7 +70,7 @@ const Signup = (props) => {
         </div>
         <div className="mb-3">
           <label htmlFor="password" className="form-label">
-            Password
+          <strong>Password</strong>  
           </label>
           <input
             type="password"
@@ -83,7 +80,7 @@ const Signup = (props) => {
         </div>
         <div className="mb-3">
           <label htmlFor="cpassword" className="form-label">
-           Confirm Password
+          <strong>Confirm Password</strong> 
           </label>
           <input
             type="password"
@@ -91,10 +88,10 @@ const Signup = (props) => {
             id="cpassword" name="cpassword" onChange={onChange} required minLength={5}
           />
         </div>
-        
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <div style={{position:"absolute",top:600 ,left:700}}>
+        <button type="submit" className="btn btn-primary" >
+          Signup
+        </button></div>
       </form>
     </div>
   

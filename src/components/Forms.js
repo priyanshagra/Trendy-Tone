@@ -1,44 +1,114 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import orderContext from "../context/order/orderContext";
-import { orderTitle } from "./Kids";
-import Gown from  './images/Gown.jpg';
+import { orderTitle1 } from "./Kids";
+import { orderTitle2 } from "./Women.js";
+import { orderTitle3 } from "./Men.js";
 
-const Forms = (props) => {
+
+const Forms = (props) => { 
+   
+  let orderTitle="";
+  if(orderTitle1==="" && orderTitle3==="" )
+  {
+   orderTitle=orderTitle2;
+   
+   
+  }
+  else if(orderTitle2===""  && orderTitle3==="") 
+  {
+   orderTitle=orderTitle1;
+   
+  }
+  else  {
+    orderTitle=orderTitle3;   
+    console.log(orderTitle)  
+  }
+  
+
+
+
+
+ 
+ const [put,putset]= useState({a:1,b:1})
+ let {a,b}=put;
+  
+  
+  
   let navigate = useNavigate();
   const context = useContext(orderContext);
   const { addOrder } = context;
 
-  const [order, setOrder] = useState({ title: "{orderTitle}", primary_colour:"",secondary_colour:"",sleeve:"",collar:"",titletoshow:"",position:"" });
+  const [order, setOrder] = useState({ title:orderTitle, primary_colour:"",secondary_colour:"",sleeve:"",collar:"",titletoshow:"",position:""});
 
-  const handleSubmit = () => {
-    addOrder(order.title, order.primary_colour,order.secondary_colour,order.sleeve,order.collar,order.titletoshow,order.position);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addOrder(order.title , order.primary_colour , order.secondary_colour , order.sleeve , order.collar, order.titletoshow , order.position , order.size);
     props.showAlert(
       "Congrutulation order bought successfully payment details will be sent on email!HAPPY SHOPPING",
       "success"
     );
     navigate("/");
   };
-  const onChange = (e) => {
-    setOrder({ ...order, [e.target.name]: e.target.value });
-  };
+  
 
+
+
+
+
+  const onChange = (e) => {
+   
+    setOrder({ ...order, [e.target.name]: e.target.value });
+    
+  };
+  
+
+
+
+
+
+
+  const onclick1 = () => {
+     putset({a:1,b:1})
+  }
+  const onclick2 = () => {
+    putset({a:1,b:2})
+ }
+ const onclick3 = () => {
+  putset({a:1,b:3})
+}
+const onclick4 = () => {
+  putset({a:1,b:4})
+}
+const onclick5 = () => {
+  putset({a:1,b:5})
+}
+const onclick6 = () => {
+  putset({a:1,b:b})
+}
+const onclick7 =() =>{
+  putset({a:2,b:b})
+}
+const onclick8 =()=>{
+  putset({a:3,b:b})
+}
+const onclick9 =()=>{
+  putset({a:4,b:b})
+}  
   return (
     <div>
-      <div >
-        <img src={Gown} alt={orderTitle}/> 
-      </div>
-      <strong >{orderTitle}</strong>
+      <div style={{textAlign:"center"}}><h3><strong>{orderTitle}</strong></h3></div>
+      <div style={{position:"absolute",left:1200,top:350}} ><img  src={require(`./images/${orderTitle}/${a}/${b}.jpg`)} alt="hello" id="img"></img></div>
       <form onSubmit={handleSubmit}>
         <strong>Primary Colour</strong>
         <div className="row my-2">
-          <div className=" form-check col-md-2 ">
+          <div className=" form-check col-md-2 ">           
             <input
               className="form-check-input"
               type="radio"
               name="primary_colour"
-              id="white"
-              value={order.primary_colour}
+              id="white1" 
+              value="white" onChange={onChange} onClick={onclick1}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
               white
@@ -50,7 +120,7 @@ const Forms = (props) => {
               type="radio"
               name="primary_colour"
               id="blue"
-              value={order.primary_colour}
+              value="blue" onChange={onChange} onClick={onclick2}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               blue
@@ -62,7 +132,7 @@ const Forms = (props) => {
               type="radio"
               name="primary_colour"
               id="orange"
-              value={order.primary_colour}
+              value="orange" onChange={onChange} onClick={onclick3}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               orange
@@ -74,7 +144,7 @@ const Forms = (props) => {
               type="radio"
               name="primary_colour"
               id="green"
-              value={order.primary_colour}
+              value="green" onChange={onChange} onClick={onclick4}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               green
@@ -86,7 +156,7 @@ const Forms = (props) => {
               type="radio"
               name="primary_colour"
               id="yellow"
-              value={order.primary_colour}
+              value="yellow" onChange={onChange} onClick={onclick5}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               yellow
@@ -101,7 +171,7 @@ const Forms = (props) => {
               type="radio"
               name="secondary_colour"
               id="white"
-              value={order.secondary_colour}
+              value="white" onChange={onChange} onClick={onclick6}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
               white
@@ -113,7 +183,7 @@ const Forms = (props) => {
               type="radio"
               name="secondary_colour"
               id="blue"
-              value={order.secondary_colour}
+              value="blue" onChange={onChange} onClick={onclick7}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               blue
@@ -125,7 +195,7 @@ const Forms = (props) => {
               type="radio"
               name="secondary_colour"
               id="orange"
-              value={order.secondary_colour}
+              value="orange" onChange={onChange} onClick={onclick8}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               orange
@@ -137,7 +207,7 @@ const Forms = (props) => {
               type="radio"
               name="secondary_colour"
               id="green"
-              value={order.secondary_colour}
+              value="green" onChange={onChange} onClick={onclick9}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               green
@@ -152,7 +222,7 @@ const Forms = (props) => {
               type="radio"
               name="sleeve"
               id="short"
-              value={order.sleeve}
+              value="short" onChange={onChange}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
              short
@@ -164,7 +234,7 @@ const Forms = (props) => {
               type="radio"
               name="sleeve"
               id="bell"
-              value={order.sleeve}
+              value="bell" onChange={onChange}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               bell
@@ -176,7 +246,7 @@ const Forms = (props) => {
               type="radio"
               name="sleeve"
               id="full"
-              value={order.sleeve}
+              value="full" onChange={onChange}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               full
@@ -191,7 +261,7 @@ const Forms = (props) => {
               type="radio"
               name="collar"
               id="shawl"
-              value={order.sleeve}
+              value="shawl" onChange={onChange}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
              Shawl
@@ -203,7 +273,7 @@ const Forms = (props) => {
               type="radio"
               name="collar"
               id="peterpan"
-              value={order.sleeve}
+              value="peterpan" onChange={onChange}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               Peter pan
@@ -215,7 +285,7 @@ const Forms = (props) => {
               type="radio"
               name="collar"
               id="v-necline"
-              value={order.sleeve}
+              value="v-neckline" onChange={onChange}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               v-neckline
@@ -232,10 +302,9 @@ const Forms = (props) => {
             id="title"
             name="titletoshow"
             onChange={onChange}
-            value={order.titletoshow}
             required
             minlength={5}
-            aria-describedby="emailHelp"
+            aria-describedby="emailHelp" style={{width:800}}
           />
         </div>
         <strong>Postion of added item</strong>
@@ -246,7 +315,7 @@ const Forms = (props) => {
               type="radio"
               name="position"
               id="Fronttop"
-              value={order.position}
+              value="fronttop" onChange={onChange}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
              Front-top
@@ -258,7 +327,7 @@ const Forms = (props) => {
               type="radio"
               name="position"
               id="Frontmiddle"
-              value={order.position}
+              value="frontmiddle" onChange={onChange}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
             Front-middle
@@ -270,19 +339,67 @@ const Forms = (props) => {
               type="radio"
               name="position"
               id="Frontlast"
-              value={order.position}
+              value="frontlast" onChange={onChange}
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
              Front-last
             </label>
           </div>
         </div>
-
-
+        <strong>Size</strong>
+        <div className="row my-2">
+          <div className=" form-check col-md-2 ">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="size"
+              id="sm"
+              value="sm" onChange={onChange} 
+            />
+            <label className="form-check-label" htmlFor="flexRadioDefault1">
+             Sm
+            </label>
+          </div>
+          <div className="form-check col-md-2 ">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="size"
+              id="lg"
+              value="lg" onChange={onChange}
+            />
+            <label className="form-check-label" htmlFor="flexRadioDefault2">
+            Lg
+            </label>
+          </div>
+          <div className=" form-check col-md-2 ">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="size"
+              id="xl" 
+              value="xl" onChange={onChange}
+            />
+            <label className="form-check-label" htmlFor="flexRadioDefault1">
+             XL
+            </label>
+          </div>
+          <div className=" form-check col-md-2 ">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="size"
+              id="xxl"
+              value="xxl" onChange={onChange}
+            />
+            <label className="form-check-label" htmlFor="flexRadioDefault1">
+             XXL
+            </label>
+          </div>
+        </div>
         <button
           type="submit"
-          className="btn btn-primary"
-        >
+          className="btn btn-primary">
           PROCEED TO BUY
         </button>
       </form>

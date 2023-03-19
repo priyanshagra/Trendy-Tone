@@ -25,18 +25,19 @@ router.post('/addorder',fetchuser,[
     body('collar','Enter a valid collar'),
     body('sleeve','Enter a valid sleeve'),
     body('titletoshow','enter a good text').isLength({ max: 15 }),
-    body('position','Enter a valid position')
+    body('position','Enter a valid position'),
+    body('size','Enter a valid size')
 ],async(req,res)=>{
     try {
         
    
-    const{title, primary_colour,secondary_colour,collar,sleeve,titletoshow,position}=req.body;
+    const{title, primary_colour,secondary_colour,collar,sleeve,titletoshow,position,size}=req.body;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
     const order= new Order({
-        title,primary_colour,secondary_colour,collar,sleeve,titletoshow,position, user:req.user.id
+        title,primary_colour,secondary_colour,collar,sleeve,titletoshow,position,size, user:req.user.id
     })
     const saveOrder=await order.save()
     

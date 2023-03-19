@@ -1,5 +1,5 @@
 import React from 'react'
-import fashion from  './images/fashion.jpg';
+
 
 const About = () => {
 
@@ -7,7 +7,6 @@ const About = () => {
   return (
     
     <div>
-<<<<<<< HEAD
         <div className="container" >
     <h1
       style={{
@@ -134,8 +133,8 @@ const About = () => {
       to an online shops interface.
       <br />
       The best filtering allows customers to easily access other areas of an
-      online fashion retailer (for example ‘striped shirts &gt; blue striped
-      shirts’).
+      online fashion retailer (for example 'striped shirts &gt; blue striped
+      shirts').
       <br />
       This allows customers to find similar products to the ones they searched
       for, whilst enjoying their browsing experience. Fashion shoppers may{" "}
@@ -143,11 +142,9 @@ const About = () => {
       also use a variety of channels to filter for themselves
     </p>
   </div>
-=======
        This is About page.In this we will discuss about the mission and vision of this website.
        In addition to this we will also discuss about our social responsibility and services provided
        to the users
->>>>>>> a4dbaa6c8bc95a02c3e164816ad46d737e4e8b9f
     </div>
   )
 }
