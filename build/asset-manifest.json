@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.073c9b0a.css",
+    "main.js": "/static/js/main.6d06f89f.js",
+    "static/media/background.jpg": "/static/media/background.72625a6093d2fe3492d9.jpg",
+    "static/media/mens.jpg": "/static/media/mens.6c1a3aa1feef0e600faa.jpg",
+    "static/media/5.jpg": "/static/media/5.c86a3be38d2379079bf5.jpg",
+    "static/media/3.jpg": "/static/media/3.65101dca295efb846fd0.jpg",
+    "static/media/1.jpg": "/static/media/1.6606d747be64e3da8404.jpg",
+    "static/media/2.jpg": "/static/media/2.70c9cc278a4e4c9785ec.jpg",
+    "static/media/men3.png": "/static/media/men3.f9885085c07ab34cb148.png",
+    "static/media/4.jpg": "/static/media/4.28c544c005ae86838129.jpg",
+    "static/media/kid.jpg": "/static/media/kid.c18644fec0615821a3b2.jpg",
+    "static/media/men5.png": "/static/media/men5.28efb150088f5d072958.png",
+    "static/media/men2.png": "/static/media/men2.27b75583c332075db2a8.png",
+    "static/media/fashion.jpg": "/static/media/fashion.fa6f10d99a8d59969313.jpg",
+    "static/media/men1.jpg": "/static/media/men1.c34c452bfd16311ee131.jpg",
+    "static/media/icon.jpg": "/static/media/icon.dcb0e5232975fbed915f.jpg",
+    "static/media/men4.png": "/static/media/men4.83dc21d5d8f908c800f5.png",
+    "static/media/women2.jpg": "/static/media/women2.5edc7e3fcad60746f97b.jpg",
+    "static/media/women1.jpg": "/static/media/women1.f82f06d9ff69766fede8.jpg",
+    "static/media/women3.jpg": "/static/media/women3.65b4dab5d6874a37eff6.jpg",
+    "static/media/women4.jpg": "/static/media/women4.bdd14e0ef6b6889fef24.jpg",
+    "static/media/kid5.jpg": "/static/media/kid5.0152689c4d62b4ae3f0d.jpg",
+    "static/media/kid4.jpg": "/static/media/kid4.f5635d67e92a26a84166.jpg",
+    "static/media/kid3.jpg": "/static/media/kid3.d813cc02849903d3914b.jpg",
+    "static/media/Gown2.jpg": "/static/media/Gown2.8dd532cf8f268cbbca71.jpg",
+    "static/media/women5.jpg": "/static/media/women5.6586a260ad6ae6f0d3ff.jpg",
+    "static/media/faq.png": "/static/media/faq.f090815733a9fdcf6e13.png",
+    "index.html": "/index.html",
+    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
+    "main.6d06f89f.js.map": "/static/js/main.6d06f89f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.6d06f89f.js"
+  ]
+}

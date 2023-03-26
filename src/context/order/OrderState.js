@@ -7,7 +7,7 @@ const OrderState = (props) => {
   //method to fetch all order
   const getOrder = async () => {
     const response = await fetch(
-      "http://localhost:8000/api/order/fetchallorder",
+      "https://trendytonebackend.onrender.com/api/order/fetchallorder",
       {
         method: "GET",
         headers: {
@@ -23,7 +23,7 @@ const OrderState = (props) => {
   const addOrder = async (title , primary_colour , secondary_colour,sleeve,collar,titletoshow,position ,size)=>{
     
 
-    const response = await fetch("http://localhost:8000/api/order/addorder",{
+    const response = await fetch("https://trendytonebackend.onrender.com/api/order/addorder",{
         method:"POST",
         headers: {
             "Content-Type":"application/json",
