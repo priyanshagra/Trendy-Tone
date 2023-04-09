@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import icon from './images/icon.jpg';
 import fashion from  './images/fashion.jpg';
 
 const Navbar = () => {
@@ -19,8 +18,9 @@ const Navbar = () => {
     backgroundSize:1550,height:180}}>
       <div className="container-fluid" >
         <Link className="navbar-brand" to="/" style={{position:"absolute",left:500,top:0,fontFamily:"cursive",fontSize:100}}>
-          Trendy Tone
+          
         </Link>
+        
         <button
           className="navbar-toggler"
           type="button"
@@ -30,7 +30,7 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"><img src={icon} alt=".."></img></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import OrderContext from "./orderContext";
 
+
 const OrderState = (props) => {
   const orderInitial = [];
   const [order, setOrder] = useState(orderInitial);
+
   //method to fetch all order
   const getOrder = async () => {
     const response = await fetch(
@@ -32,7 +34,7 @@ const OrderState = (props) => {
         body:JSON.stringify({title,primary_colour,secondary_colour,sleeve,collar,titletoshow,position ,size})
     });
     
-
+   
     const orders = await response.json();
     setOrder(order.concat(orders))
 }
@@ -43,6 +45,12 @@ const OrderState = (props) => {
       {props.children}
     </OrderContext.Provider>
   );
+
+  
 };
 
 export default OrderState;
+
+
+
+

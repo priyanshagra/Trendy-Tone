@@ -5,12 +5,13 @@ const Signup = (props) => {
   
 
 
-
+  const [isLoading, setIsLoading] = useState(false);
 
   const [credentials,setCredentials]=useState({name:"",email:"",password:"",cpassword:""})
   let navigate = useNavigate();
   const handleSubmit=async (e)=>{
       e.preventDefault();
+      setIsLoading(true);
       const {name,email,password}=credentials;
       const response=await fetch("https://trendytonebackend.onrender.com/api/auth/createuser",{
           
@@ -23,6 +24,7 @@ const Signup = (props) => {
       });
       const json = await response.json();
       console.log(json);
+      setIsLoading(false);
       if(json.success)
       {
         localStorage.setItem('token',json.authtoken);
@@ -39,9 +41,12 @@ const Signup = (props) => {
   }
 
   return (
-    
-    
+    <div>
+    <div>
+      {isLoading ? <div>Loading...</div> : <div></div>}
+    </div>
     <div className="container">
+
       <form onSubmit={handleSubmit}>
       <div className="mb-3">
           <label htmlFor="name" className="form-label">
@@ -50,7 +55,7 @@ const Signup = (props) => {
           <input
             type="text"
             className="form-control"
-            id="name" name="name" onChange={onChange} required 
+            id="name" name="name" onChange={onChange} required  minLength={5}
             aria-describedby="emailHelp" 
           />
         </div>
@@ -61,7 +66,7 @@ const Signup = (props) => {
           <input
             type="email"
             className="form-control"
-            id="email" name="email" onChange={onChange} required
+            id="email" name="email" onChange={onChange} required 
             aria-describedby="emailHelp"
           />
           <div id="emailHelp" className="form-text">
@@ -88,13 +93,13 @@ const Signup = (props) => {
             id="cpassword" name="cpassword" onChange={onChange} required minLength={5}
           />
         </div>
-        <div style={{position:"absolute",top:600 ,left:700}}>
+        <div >
         <button type="submit" className="btn btn-primary" >
           Signup
         </button></div>
       </form>
     </div>
-  
+  </div>
   );
 };
 

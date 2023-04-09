@@ -98,7 +98,7 @@ const onclick9 =()=>{
   return (
     <div>
       <div style={{textAlign:"center"}}><h3><strong>{orderTitle}</strong></h3></div>
-      <div style={{position:"absolute",left:1200,top:350}} ><img  src={require(`./images/${orderTitle}/${a}/${b}.jpg`)} alt="hello" id="img"></img></div>
+      <div  ><img className="card-img-top" src={require(`./images/${orderTitle}/${a}/${b}.jpg`)} alt="hello" id="img" style={{height:310}} ></img></div>
       <form onSubmit={handleSubmit}>
         <strong>Primary Colour</strong>
         <div className="row my-2">
@@ -108,7 +108,7 @@ const onclick9 =()=>{
               type="radio"
               name="primary_colour"
               id="white1" 
-              value="white" onChange={onChange} onClick={onclick1}
+              value="white" onChange={onChange} onClick={onclick1} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
               white
@@ -120,7 +120,7 @@ const onclick9 =()=>{
               type="radio"
               name="primary_colour"
               id="blue"
-              value="blue" onChange={onChange} onClick={onclick2}
+              value="blue" onChange={onChange} onClick={onclick2} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               blue
@@ -132,7 +132,7 @@ const onclick9 =()=>{
               type="radio"
               name="primary_colour"
               id="orange"
-              value="orange" onChange={onChange} onClick={onclick3}
+              value="orange" onChange={onChange} onClick={onclick3} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               orange
@@ -144,7 +144,7 @@ const onclick9 =()=>{
               type="radio"
               name="primary_colour"
               id="green"
-              value="green" onChange={onChange} onClick={onclick4}
+              value="green" onChange={onChange} onClick={onclick4} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               green
@@ -156,7 +156,7 @@ const onclick9 =()=>{
               type="radio"
               name="primary_colour"
               id="yellow"
-              value="yellow" onChange={onChange} onClick={onclick5}
+              value="yellow" onChange={onChange} onClick={onclick5} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               yellow
@@ -171,7 +171,7 @@ const onclick9 =()=>{
               type="radio"
               name="secondary_colour"
               id="white"
-              value="white" onChange={onChange} onClick={onclick6}
+              value="white" onChange={onChange} onClick={onclick6} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
               white
@@ -183,7 +183,7 @@ const onclick9 =()=>{
               type="radio"
               name="secondary_colour"
               id="blue"
-              value="blue" onChange={onChange} onClick={onclick7}
+              value="blue" onChange={onChange} onClick={onclick7} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               blue
@@ -195,7 +195,7 @@ const onclick9 =()=>{
               type="radio"
               name="secondary_colour"
               id="orange"
-              value="orange" onChange={onChange} onClick={onclick8}
+              value="orange" onChange={onChange} onClick={onclick8} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               orange
@@ -207,7 +207,7 @@ const onclick9 =()=>{
               type="radio"
               name="secondary_colour"
               id="green"
-              value="green" onChange={onChange} onClick={onclick9}
+              value="green" onChange={onChange} onClick={onclick9} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               green
@@ -222,7 +222,7 @@ const onclick9 =()=>{
               type="radio"
               name="sleeve"
               id="short"
-              value="short" onChange={onChange}
+              value="short" onChange={onChange} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
              short
@@ -234,7 +234,7 @@ const onclick9 =()=>{
               type="radio"
               name="sleeve"
               id="bell"
-              value="bell" onChange={onChange}
+              value="bell" onChange={onChange} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               bell
@@ -246,8 +246,8 @@ const onclick9 =()=>{
               type="radio"
               name="sleeve"
               id="full"
-              value="full" onChange={onChange}
-            />
+              value="full" onChange={onChange} required
+            /> 
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               full
             </label>
@@ -261,8 +261,8 @@ const onclick9 =()=>{
               type="radio"
               name="collar"
               id="shawl"
-              value="shawl" onChange={onChange}
-            />
+              value="shawl" onChange={onChange} required
+            /> 
             <label className="form-check-label" htmlFor="flexRadioDefault1">
              Shawl
             </label>
@@ -273,7 +273,7 @@ const onclick9 =()=>{
               type="radio"
               name="collar"
               id="peterpan"
-              value="peterpan" onChange={onChange}
+              value="peterpan" onChange={onChange} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               Peter pan
@@ -285,7 +285,7 @@ const onclick9 =()=>{
               type="radio"
               name="collar"
               id="v-necline"
-              value="v-neckline" onChange={onChange}
+              value="v-neckline" onChange={onChange} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
               v-neckline
@@ -302,9 +302,8 @@ const onclick9 =()=>{
             id="title"
             name="titletoshow"
             onChange={onChange}
-            required
             minlength={5}
-            aria-describedby="emailHelp" style={{width:800}}
+            aria-describedby="emailHelp" style={{width:250}}
           />
         </div>
         <strong>Postion of added item</strong>
@@ -315,8 +314,8 @@ const onclick9 =()=>{
               type="radio"
               name="position"
               id="Fronttop"
-              value="fronttop" onChange={onChange}
-            />
+              value="fronttop" onChange={onChange} required
+            /> 
             <label className="form-check-label" htmlFor="flexRadioDefault1">
              Front-top
             </label>
@@ -327,7 +326,7 @@ const onclick9 =()=>{
               type="radio"
               name="position"
               id="Frontmiddle"
-              value="frontmiddle" onChange={onChange}
+              value="frontmiddle" onChange={onChange} reqiured
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
             Front-middle
@@ -339,7 +338,7 @@ const onclick9 =()=>{
               type="radio"
               name="position"
               id="Frontlast"
-              value="frontlast" onChange={onChange}
+              value="frontlast" onChange={onChange} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
              Front-last
@@ -354,7 +353,7 @@ const onclick9 =()=>{
               type="radio"
               name="size"
               id="sm"
-              value="sm" onChange={onChange} 
+              value="sm" onChange={onChange} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
              Sm
@@ -366,7 +365,7 @@ const onclick9 =()=>{
               type="radio"
               name="size"
               id="lg"
-              value="lg" onChange={onChange}
+              value="lg" onChange={onChange} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault2">
             Lg
@@ -378,7 +377,7 @@ const onclick9 =()=>{
               type="radio"
               name="size"
               id="xl" 
-              value="xl" onChange={onChange}
+              value="xl" onChange={onChange} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
              XL
@@ -390,7 +389,7 @@ const onclick9 =()=>{
               type="radio"
               name="size"
               id="xxl"
-              value="xxl" onChange={onChange}
+              value="xxl" onChange={onChange} required
             />
             <label className="form-check-label" htmlFor="flexRadioDefault1">
              XXL

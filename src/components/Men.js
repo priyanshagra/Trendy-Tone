@@ -35,7 +35,7 @@ const Men = () => {
     <div className="row ">
       <h1>Men's wear</h1> 
       <div className="col-md-6">
-        <img src={men1} className="card-img-top" alt="..." style={{height: "457px",width: "471px" ,paddingLeft:"161px"}} />
+        <img src={men1} className="card-img-top" alt="..." style={{height:310}} />
         <div className="card-body" style={{textAlign:"center"}}>
           <h5 className="card-title">Jacket and Trouser</h5>
           <p className="card-text">
@@ -49,7 +49,7 @@ const Men = () => {
         </div>
       </div>
       <div className="col-md-6">
-        <img src={men2} className="card-img-top" alt="..." style={{height: "457px",width: "471px" ,paddingLeft:"161px"}} />
+        <img src={men2} className="card-img-top" alt="..."  style={{height:310}}/>
         <div className="card-body" style={{textAlign:"center"}}>
           <h5 className="card-title">Kurta and Pajama</h5>
           <p className="card-text">
@@ -63,7 +63,7 @@ const Men = () => {
         </div>
       </div>
       <div className="col-md-6">
-        <img src={men3} className="card-img-top" alt="..."  style={{height: "457px",width: "471px" ,paddingLeft:"161px"}}/>
+        <img src={men3} className="card-img-top" alt="..."  style={{height:310}}/>
         <div className="card-body" style={{textAlign:"center"}}>
           <h5 className="card-title">T-shirt and Trouser</h5>
           <p className="card-text">
@@ -77,7 +77,7 @@ const Men = () => {
         </div>
       </div>
       <div className="col-md-6">
-        <img src={men4} className="card-img-top" alt="..." style={{height: "457px",width: "471px" ,paddingLeft:"161px"}} />
+        <img src={men4} className="card-img-top" alt="..." style={{height:310}} />
         <div className="card-body" style={{textAlign:"center"}}>
           <h5 className="card-title">T-shirt and lower</h5>
           <p className="card-text">
@@ -91,7 +91,7 @@ const Men = () => {
         </div>
       </div>
       <div className="col-md-6" >
-        <img src={men5} className="card-img-top" alt="..."  style={{height: "457px",width: "471px" ,paddingLeft:"161px"}}/>
+        <img src={men5} className="card-img-top" alt="..."  style={{height:310}}/>
         <div className="card-body" style={{textAlign:"center"}}>
           <h5 className="card-title">Blazor and Jeans</h5>
           <p className="card-text">

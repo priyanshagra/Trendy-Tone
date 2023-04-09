@@ -5,9 +5,14 @@ const Profile = () => {
   
   const detailInitial = [];
   const [detail, setDetail] = useState(detailInitial);
+  const [isLoading, setIsLoading] = useState(true);
+        
+
+
+
     const user= async()=>{
     const response = await fetch(
-      "http://localhost:8000/api/auth/getuser",
+      "https://trendytonebackend.onrender.com/api/auth/getuser",
       {
         method: "GET",
         headers: {
@@ -15,7 +20,10 @@ const Profile = () => {
           "auth-token": localStorage.getItem('token')
         },
       }
-    );
+    )
+      
+      setIsLoading(false); 
+    
     const json = await response.json();
      setDetail(json)
   
@@ -36,10 +44,30 @@ const Profile = () => {
     
 
   return (
-    <div class="container">
-      <h1>Your Name</h1>
-      <h3> {detail.name}</h3>
+    <div>
+      <div>
+      {isLoading ? <div>Loading...</div> : <div></div>}
     </div>
+    <div class="container">
+      <div style={{textAlign:"center"}}>
+        <h1 >WELCOME</h1>
+      </div>
+      <h3>YOU <strong>{detail.name}</strong> WILL BE TREATED AS A GOD</h3> 
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    
+    </div> </div>
   )
 }
 

@@ -1,7 +1,10 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
+  
+ 
+
   return (
     <div style={{marginBottom:0}}>
        <br></br>
@@ -10,6 +13,7 @@ const Footer = () => {
        <br></br>
        <br></br>
        <br></br>
+    
     <div style={{textAlign:"center"}}>
       <strong>For Further Queries Please Click on the Link Below </strong> 
       
@@ -21,6 +25,7 @@ const Footer = () => {
     
       <h4 style={{marginBottom:0}}> &copy; Copyright2023 By TrendyTone.com</h4>   
     </div>
+    
     </div>
   )
 }

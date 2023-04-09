@@ -1,9 +1,14 @@
-import React from 'react'
+
 const Orderitem = (props) => {
     
+  
+
+
    const {orders} = props;
    
   return (
+    <div>
+      
     <div style={{padding:20}}>
       <div style={{textAlign:"center"}}><h1>{orders.title}</h1></div>
        <div>
@@ -24,7 +29,45 @@ const Orderitem = (props) => {
             <strong>Secondary Colour:{orders.secondary_colour}</strong> 
           </li>
         </ul>
-        </div> 
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+    <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
     </div>
   )
 }
